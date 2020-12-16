@@ -1,3 +1,4 @@
 # Prisma Migrate lockfile v1
 
 20201216105417-initial-migration
+20201216105917-add-choices

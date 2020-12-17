@@ -3,7 +3,7 @@ import Layout from "app/layouts/Layout"
 import { Link, usePaginatedQuery, useRouter, BlitzPage } from "blitz"
 import getQuestions from "app/questions/queries/getQuestions"
 
-const ITEMS_PER_PAGE = 100
+const ITEMS_PER_PAGE = 10
 
 export const QuestionsList = () => {
   // const [questions] = useQuery(getQuestions, { orderBy: { id: "desc" } })
@@ -26,6 +26,13 @@ export const QuestionsList = () => {
             <Link href={`/questions/${question.id}`}>
               <a>{question.text}</a>
             </Link>
+            <ul>
+              {question.choices.map((choice) => (
+                <li key={choice.id}>
+                  {choice.text} - {choice.votes} votes
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>

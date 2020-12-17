@@ -8,13 +8,23 @@ type QuestionFormProps = {
 const QuestionForm = ({ initialValues, onSubmit }: QuestionFormProps) => {
   return (
     <form
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "300px",
+        height: "200px",
+        justifyContent: "space-between",
+      }}
       onSubmit={(event) => {
         event.preventDefault()
         onSubmit(event)
       }}
     >
-      <div>Put your form fields here. But for now, just click submit</div>
-      <div>{JSON.stringify(initialValues)}</div>
+      <input placeholder="Name" />
+      <input placeholder="Choice 1" />
+      <input placeholder="Choice 2" />
+      <input placeholder="Choice 3" />
+      {/* <div>{JSON.stringify(initialValues)}</div> */}
       <button>Submit</button>
     </form>
   )

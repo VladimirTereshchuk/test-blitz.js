@@ -16,7 +16,7 @@ export const EditQuestion = () => {
       <h1>Edit Question {question.id}</h1>
       <pre>{JSON.stringify(question)}</pre>
 
-      <QuestionForm
+      {/* <QuestionForm
         initialValues={question}
         onSubmit={async () => {
           try {
@@ -32,7 +32,7 @@ export const EditQuestion = () => {
             alert("Error editing question " + JSON.stringify(error, null, 2))
           }
         }}
-      />
+      /> */}
     </div>
   )
 }

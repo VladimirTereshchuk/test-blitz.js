@@ -1,3 +1,4 @@
+import React, { useState } from "react"
 import Layout from "app/layouts/Layout"
 import { Link, useRouter, useMutation, BlitzPage } from "blitz"
 import createQuestion from "app/questions/mutations/createQuestion"
@@ -6,6 +7,8 @@ import QuestionForm from "app/questions/components/QuestionForm"
 const NewQuestionPage: BlitzPage = () => {
   const router = useRouter()
   const [createQuestionMutation] = useMutation(createQuestion)
+  const [name, setName] = React.useState("")
+  const [choiceOne, setchoiceOne] = React.useState("")
 
   return (
     <div>
@@ -21,8 +24,8 @@ const NewQuestionPage: BlitzPage = () => {
                 choices: {
                   create: [
                     { text: event.target[1].value },
-                    { text: event.target[2].value },
-                    { text: event.target[3].value },
+                    // { text: event.target[2].value },
+                    // { text: event.target[3].value },
                   ],
                 },
               },

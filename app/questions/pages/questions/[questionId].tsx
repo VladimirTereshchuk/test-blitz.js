@@ -15,7 +15,7 @@ export const Question = () => {
       <h1>Question {question.text}</h1>
       {/* <pre>{JSON.stringify(question, null, 2)}</pre> */}
       <ul>
-        {question.choices.map((choice) => (
+        {question.choices?.map((choice) => (
           <li key={choice.id}>
             {choice.text} - {choice.votes} votes
           </li>

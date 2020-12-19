@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 type QuestionFormProps = {
   initialValues: any
@@ -6,6 +6,13 @@ type QuestionFormProps = {
 }
 
 const QuestionForm = ({ initialValues, onSubmit }: QuestionFormProps) => {
+  // console.log(initialValues)
+  // const [name, setName] = useState(initialValues.text || "")
+  // const [choiceOne, setchoiceOne] = useState(initialValues.choices[0].text || "")
+
+  const handleInput = (e) => {
+    console.log(e)
+  }
   return (
     <form
       style={{
@@ -20,11 +27,23 @@ const QuestionForm = ({ initialValues, onSubmit }: QuestionFormProps) => {
         onSubmit(event)
       }}
     >
-      <input placeholder="Name" />
-      <input placeholder="Choice 1" />
-      <input placeholder="Choice 2" />
-      <input placeholder="Choice 3" />
-      {/* <div>{JSON.stringify(initialValues)}</div> */}
+      <input
+        placeholder="Name"
+        //  value={name} onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        placeholder="Choice 1"
+        // value={choiceOne}
+        // onChange={(e) => setchoiceOne(e.target.value)}
+      />
+      {/* <input
+        placeholder="Choice 2"
+        // value={initialValues.choices[1] ? initialValues.choices[1].text : ""}
+      />
+      <input
+        placeholder="Choice 3"
+        // value={initialValues.choices[2] ? initialValues.choices[2].text : ""}
+      /> */}
       <button>Submit</button>
     </form>
   )
